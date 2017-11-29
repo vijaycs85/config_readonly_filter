@@ -8,7 +8,7 @@ use Drupal\Tests\BrowserTestBase;
 /**
  * Defines a base class for testing the Configuration Read-only Filter module.
  */
-class ConfigReadOnlyFilterTestBase extends BrowserTestBase {
+abstract class ConfigReadOnlyFilterTestBase extends BrowserTestBase {
 
   /**
    * A user with permission to administer feeds and create content.
