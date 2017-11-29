@@ -79,7 +79,7 @@ class ConfigReadOnlyFilter extends ConfigEntityBase implements ConfigReadOnlyFil
    * {@inheritdoc}
    */
   public function setConfiguration() {
-    if (isset($this->configuration)) {
+    if (isset($this->configuration) && !is_array($this->configuration)) {
       $this->configuration = array_filter(explode("\r\n", $this->configuration));
     }
     return $this;
