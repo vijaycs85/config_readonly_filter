@@ -1,0 +1,19 @@
+{
+  "name": "drupal/config_readonly_filter",
+  "description": "Provides ways to whitelist configurations when site is on read-only mode.",
+  "type": "drupal-module",
+  "homepage": "http://drupal.org/project/config_readonly_filter",
+  "authors": [
+    {
+      "name": "Vijaya Chandran Mani",
+      "homepage": "https://www.drupal.org/u/vijaycs85",
+      "role": "Maintainer"
+    }
+  ],
+  "support": {
+    "issues": "http://drupal.org/project/config_readonly_filter",
+    "irc": "irc://irc.freenode.org/drupal-contribute",
+    "source": "http://cgit.drupalcode.org/config_readonly_filter"
+  },
+  "license": "GPL-2.0+"
+}
