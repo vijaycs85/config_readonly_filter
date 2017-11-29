@@ -40,10 +40,9 @@ class ConfigReadOnlyFilterSubscriber extends ReadOnlyFormSubscriber {
    * {@inheritdoc}
    */
   public function onFormAlter(ReadOnlyFormEvent $event) {
-    // Add additional exceptions.
-    $this->formIdExceptions = array_merge($this->formIdExceptions, $this->getFormIds());
-    parent::onFormAlter($event);
-    if (!$event->isFormReadOnly()) {
+    $build_info = $event->getFormState()->getBuildInfo();
+    $form_object = $build_info['callback_object'];
+    if (in_array($form_object->getFormId(), $this->getFormIds())) {
       $event->stopPropagation();
     }
   }
