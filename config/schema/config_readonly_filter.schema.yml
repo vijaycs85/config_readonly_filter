@@ -19,4 +19,3 @@ config_readonly_filter.filter.*:
       sequence:
         - type: string
           label: 'Configuration'
-

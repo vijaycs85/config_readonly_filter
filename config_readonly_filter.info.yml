@@ -7,4 +7,3 @@ dependencies:
   - config_readonly
 test_dependencies:
   - drupal:config
-

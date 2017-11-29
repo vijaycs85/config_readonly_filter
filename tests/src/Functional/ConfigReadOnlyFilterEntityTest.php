@@ -2,8 +2,6 @@
 
 namespace Drupal\Tests\config_readonly_filter\Functional;
 
-use Drupal\config_readonly_filter\ConfigReadOnlyFilterInterface;
-
 /**
  * Defines a class for testing the Configuration Read-only Filter entity.
  *

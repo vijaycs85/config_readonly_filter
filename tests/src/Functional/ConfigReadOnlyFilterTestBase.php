@@ -51,7 +51,7 @@ abstract class ConfigReadOnlyFilterTestBase extends BrowserTestBase {
    * @param array $values
    *   An array of values.
    */
-  protected function createConfigReadOnlyFilter(array $values = array()) {
+  protected function createConfigReadOnlyFilter(array $values = []) {
     $label = 'Global';
     $machine_name = strtolower($this->randomMachineName());
     $values += [
@@ -77,7 +77,7 @@ abstract class ConfigReadOnlyFilterTestBase extends BrowserTestBase {
   /**
    * Turns off read-only mode.
    */
-  protected function  turnOffReadOnlySetting() {
+  protected function turnOffReadOnlySetting() {
     $settings['settings']['config_readonly'] = (object) [
       'value' => FALSE,
       'required' => TRUE,
