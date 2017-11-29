@@ -1,0 +1,22 @@
+# Schema for the configuration files of the Configuration Read-only Filter module.
+
+config_readonly_filter.filter.*:
+  type: config_entity
+  label: 'Configuration read-only filter'
+  mapping:
+    id:
+      type: string
+      label: 'ID'
+    label:
+      type: label
+      label: 'Label'
+    type:
+      type: string
+      label: 'Type'
+    configuration:
+      type: sequence
+      label: 'Configuration'
+      sequence:
+        - type: string
+          label: 'Configuration'
+

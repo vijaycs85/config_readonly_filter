@@ -1,0 +1,10 @@
+name: Configuration Read-only Filter
+type: module
+description: 'Provides ways to whitelist configurations when site is on read-only mode.'
+package: Configuration
+core: 8.x
+dependencies:
+  - config_readonly
+test_dependencies:
+  - drupal:config
+

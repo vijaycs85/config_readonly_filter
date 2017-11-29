@@ -1,0 +1,6 @@
+services:
+  pfizer_performance_config_readonly_subscriber:
+    class: Drupal\config_readonly_filter\EventSubscriber\ConfigReadOnlyFilterSubscriber
+    arguments: ['@entity_type.manager']
+    tags:
+      - { name: event_subscriber }
