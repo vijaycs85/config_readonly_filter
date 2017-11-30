@@ -127,7 +127,6 @@ script:
   - phpcs --standard=phpcs.xml tests -s
 
   - drupal-ti script
-  - drupal-ti --include ".travis-simpletest-js.sh"
 
 after_script:
   - drupal-ti after_script
