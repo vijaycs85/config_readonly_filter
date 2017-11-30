@@ -14,11 +14,10 @@ dist: precise
 
 php:
   - 7.1
-  - 7.0
 
-branches:
-  except:
-    - "7.x-1.x"
+#branches:
+#  except:
+#    - "7.x-1.x"
 
 matrix:
   fast_finish: true
@@ -127,7 +126,6 @@ script:
   - phpcs --standard=phpcs.xml src -s
   - phpcs --standard=phpcs.xml modules -s
   - phpcs --standard=phpcs.xml tests -s
-  - phpcs --standard=phpcs.xml config_readonly_filter.module
 
   - drupal-ti script
   - drupal-ti --include ".travis-simpletest-js.sh"
