@@ -1,0 +1,5 @@
+name: Configuration Read-only Filter
+type: module
+description: 'Support module for Configuration Read-only Filter testing.'
+package: Testing
+core: 8.x
