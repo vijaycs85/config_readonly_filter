@@ -2,10 +2,6 @@ preset: psr2
 
 risky: false
 
-enabled:
-
-disabled:
-
 finder:
   exclude:
     - "tests"
