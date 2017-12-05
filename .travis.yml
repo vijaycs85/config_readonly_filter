@@ -28,7 +28,6 @@ env:
     # add composer's global bin directory to the path
     # see: https://github.com/drush-ops/drush#install---composer
     - PATH="$PATH:$HOME/.composer/vendor/bin"
-    - DRUPAL_TI_DRUSH_VERSION="8.1.x"
 
     # Configuration variables.
     - DRUPAL_TI_MODULE_NAME="config_readonly_filter"
@@ -105,10 +104,11 @@ before_install:
   # Add the oauth token to prevent GitHub timeouts.
   - git config --global github.accesstoken $GITHUB_OAUTH_TOKEN
   - composer global require "hirak/prestissimo:^0.3"
-  - composer global require "lionsad/drupal_ti:dev-master#396d11d200005eb68491d24170da0a98ae7f51b3"
+  - composer global require "lionsad/drupal_ti:@dev"
   - composer global require "squizlabs/php_codesniffer:2.*"
   - composer global require "drupal/coder:8.2.*"
   - phpcs --config-set installed_paths $HOME/.composer/vendor/drupal/coder/coder_sniffer
+  - export DRUPAL_TI_DRUSH_VERSION="^8.*"
   - drupal-ti before_install
 
 install:
