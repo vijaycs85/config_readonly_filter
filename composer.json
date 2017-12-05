@@ -18,6 +18,6 @@
   "license": "GPL-2.0+",
   "require": {
     "lionsad/drupal_ti": "@dev",
-    "drush/drush": "^8"
+    "drush/drush": "~8"
   }
 }
