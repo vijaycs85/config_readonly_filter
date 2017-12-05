@@ -108,7 +108,7 @@ before_install:
   - composer global require "squizlabs/php_codesniffer:2.*"
   - composer global require "drupal/coder:8.2.*"
   - phpcs --config-set installed_paths $HOME/.composer/vendor/drupal/coder/coder_sniffer
-  - export DRUPAL_TI_DRUSH_VERSION="^8.*"
+  - export DRUPAL_TI_DRUSH_VERSION="drush/drush:^8.*"
   - drupal-ti before_install
 
 install:
