@@ -32,8 +32,6 @@ cd out
 git config user.name "Travis CI"
 git config user.email "vijaycs85@gmail.com"
 
-echo "<h1>Works!</h1>" > index.html
-
 # If there are no changes (e.g. this is a README update) then just bail.
 if [ -z `git diff --exit-code` ]; then
     echo "No changes to the spec on this push; exiting."

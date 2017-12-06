@@ -105,7 +105,6 @@ script:
   - phpcs --standard=phpcs.xml src -s
   - phpcs --standard=phpcs.xml tests -s
   - drupal-ti script
-  - mkdir report && echo "<h1>Works via travis job</h1>" > report/index.html
   - bash ./scripts/gh-page.sh
 
 after_script:
