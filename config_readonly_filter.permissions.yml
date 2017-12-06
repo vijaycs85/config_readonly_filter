@@ -1,3 +1,0 @@
-administer configuration read-only filter:
-  title: 'Administer configuration read-only filter'
-  restrict access: true

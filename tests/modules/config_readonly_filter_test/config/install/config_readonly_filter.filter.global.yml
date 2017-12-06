@@ -1,9 +1,0 @@
-langcode: en
-status: true
-dependencies: {  }
-id: global
-label: Global
-type: form
-configuration:
-  - system_performance_settings
-  - menu_edit_form

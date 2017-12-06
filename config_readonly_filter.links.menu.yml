@@ -1,6 +1,0 @@
-config_readonly_filter.site_information_settings:
-  title: 'Configuration read-only filter'
-  parent: system.admin_config_system
-  description: 'Allows to whitelist configurations in read-only mode.'
-  route_name: entity.config_readonly_filter.collection
-  weight: -20

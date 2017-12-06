@@ -1,5 +1,0 @@
-comment_type_add:
-  route_name: entity.config_readonly_filter.add_form
-  title: 'Add configuration read-only filter'
-  appears_on:
-    - entity.config_readonly_filter.collection
