@@ -85,7 +85,7 @@ mysql:
 
 before_install:
   # Remove xdebug. We aren't generating code coverage, and it slows down Composer.
-  # - phpenv config-rm xdebug.ini || true
+  - phpenv config-rm xdebug.ini || true
   # Add the oauth token to prevent GitHub timeouts.
   - git config --global github.accesstoken $GITHUB_OAUTH_TOKEN
   - composer global require "hirak/prestissimo:^0.3"
@@ -105,6 +105,7 @@ script:
   - phpcs --standard=phpcs.xml src -s
   - phpcs --standard=phpcs.xml tests -s
   - drupal-ti script
+  - mkdir report && echo "<h1>Works via travis job</h1>" > report/index.html
   - bash ./scripts/gh-page.sh
 
 after_script:
