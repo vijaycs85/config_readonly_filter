@@ -54,16 +54,16 @@ env:
     - DRUPAL_TI_SIMPLETEST_JS_ARGS="--verbose --color --concurrency 1 --url $DRUPAL_TI_WEBSERVER_URL:$DRUPAL_TI_WEBSERVER_PORT --types PHPUnit-FunctionalJavascript"
 
     # PHPUnit specific commandline arguments.
-    - DRUPAL_TI_PHPUNIT_ARGS=""
+    - DRUPAL_TI_PHPUNIT_ARGS="-c ./phpunit.xml.dist --coverage-html report"
     # Specifying the phpunit-core src/ directory is useful when e.g. a vendor/
     # directory is present in the module directory, which phpunit would then
     # try to find tests in. This option is relative to $TRAVIS_BUILD_DIR.
     #- DRUPAL_TI_PHPUNIT_CORE_SRC_DIRECTORY="./tests/src"
 
     # Code coverage via coveralls.io
-    #- DRUPAL_TI_COVERAGE="satooshi/php-coveralls:0.6.*"
+    - DRUPAL_TI_COVERAGE="satooshi/php-coveralls:0.6.*"
     # This needs to match your .coveralls.yml file.
-    #- DRUPAL_TI_COVERAGE_FILE="build/logs/clover.xml"
+    - DRUPAL_TI_COVERAGE_FILE="build/logs/clover.xml"
 
     # Debug options
     #- DRUPAL_TI_DEBUG="-x -v"
@@ -74,9 +74,9 @@ env:
   matrix:
     # [[[ SELECT ANY OR MORE OPTIONS ]]]
     #- DRUPAL_TI_RUNNERS="phpunit"
-    - DRUPAL_TI_RUNNERS="simpletest"
+    #- DRUPAL_TI_RUNNERS="simpletest"
     #- DRUPAL_TI_RUNNERS="behat"
-    #- DRUPAL_TI_RUNNERS="phpunit simpletest"
+    - DRUPAL_TI_RUNNERS="phpunit-core simpletest"
 
 mysql:
   database: drupal_travis_db
@@ -85,7 +85,7 @@ mysql:
 
 before_install:
   # Remove xdebug. We aren't generating code coverage, and it slows down Composer.
-  - phpenv config-rm xdebug.ini || true
+  # - phpenv config-rm xdebug.ini || true
   # Add the oauth token to prevent GitHub timeouts.
   - git config --global github.accesstoken $GITHUB_OAUTH_TOKEN
   - composer global require "hirak/prestissimo:^0.3"
@@ -105,6 +105,7 @@ script:
   - phpcs --standard=phpcs.xml src -s
   - phpcs --standard=phpcs.xml tests -s
   - drupal-ti script
+  - bash ./scripts/gh-page.sh
 
 after_script:
   - drupal-ti after_script
